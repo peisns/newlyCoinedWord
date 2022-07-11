@@ -40,6 +40,7 @@
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <connections>
+                                            <action selector="clearKeyboard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zxq-A0-Yl1"/>
                                             <action selector="searchWord:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nGl-Is-JYb"/>
                                         </connections>
                                     </button>
@@ -145,6 +146,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="03j-rJ-EQa" firstAttribute="height" secondItem="x8q-ap-xOk" secondAttribute="height" id="5XZ-CM-DO2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aFl-8x-GZ8" secondAttribute="trailing" constant="44" id="9DB-8y-IUg"/>
@@ -165,6 +167,9 @@
                             <constraint firstItem="Bnh-ot-klb" firstAttribute="top" secondItem="aFl-8x-GZ8" secondAttribute="bottom" constant="8" id="y8f-kG-vhg"/>
                             <constraint firstItem="x8q-ap-xOk" firstAttribute="leading" secondItem="aFl-8x-GZ8" secondAttribute="leading" id="zJ5-Jq-rcz"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="q5G-kI-6Fq" appends="YES" id="iGJ-pU-cUv"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="exampleButton01" destination="x8q-ap-xOk" id="Rb7-aH-nxn"/>
@@ -183,6 +188,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="q5G-kI-6Fq">
+                    <connections>
+                        <action selector="clearKeyboard:" destination="BYZ-38-t0r" id="cAo-UR-b87"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="97.767857142857139"/>
         </scene>

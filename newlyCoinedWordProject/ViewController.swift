@@ -79,5 +79,10 @@ class ViewController: UIViewController {
         }
         select4keysAndChangeBtsTitle()
     }
+    
+    @IBAction func clearKeyboard(_ sender: Any) {
+        view.endEditing(true)
+    }
+    
 }
 
