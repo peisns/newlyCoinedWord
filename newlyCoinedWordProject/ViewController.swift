@@ -48,7 +48,6 @@ class ViewController: UIViewController {
         mainLabelViewTopView.layer.borderColor = UIColor.black.cgColor
         mainLabelViewTopView.layer.borderWidth = 1
         
-//        mainLabelText.text = exampleWordsDictionary[exampleWordsDictionary.keys.randomElement()!]
         mainLabelText.text = "신조어를 검색해보세요, 여기에 뜻이 표시됩니다"
 
     }
@@ -83,6 +82,13 @@ class ViewController: UIViewController {
     @IBAction func clearKeyboard(_ sender: Any) {
         view.endEditing(true)
     }
+    
+    @IBAction func exampleButtonClicked(_ sender: UIButton) {
+        var searchedKey: String = exampleButtonCollection[sender.tag].currentTitle!
+            mainLabelText.text = exampleWordsDictionary[searchedKey]
+            select4keysAndChangeBtsTitle()
+    }
+    
     
 }
 
