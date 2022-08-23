@@ -13,6 +13,9 @@
 		35177D6028B533E600A57FF1 /* WriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35177D5F28B533E600A57FF1 /* WriteView.swift */; };
 		35177D6328B537BB00A57FF1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 35177D6228B537BB00A57FF1 /* SnapKit */; };
 		35177D6528B5396A00A57FF1 /* DiaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35177D6428B5396A00A57FF1 /* DiaryTableViewCell.swift */; };
+		35177D6A28B5887800A57FF1 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 35177D6928B5887800A57FF1 /* Realm */; };
+		35177D6C28B5887800A57FF1 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 35177D6B28B5887800A57FF1 /* RealmSwift */; };
+		35177D6E28B5888F00A57FF1 /* DiaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35177D6D28B5888F00A57FF1 /* DiaryModel.swift */; };
 		3573CD88287BA40300569CB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3573CD87287BA40300569CB7 /* AppDelegate.swift */; };
 		3573CD8A287BA40300569CB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3573CD89287BA40300569CB7 /* SceneDelegate.swift */; };
 		3573CD8C287BA40300569CB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3573CD8B287BA40300569CB7 /* ViewController.swift */; };
@@ -27,6 +30,7 @@
 		35177D5D28B533C100A57FF1 /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
 		35177D5F28B533E600A57FF1 /* WriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteView.swift; sourceTree = "<group>"; };
 		35177D6428B5396A00A57FF1 /* DiaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewCell.swift; sourceTree = "<group>"; };
+		35177D6D28B5888F00A57FF1 /* DiaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryModel.swift; sourceTree = "<group>"; };
 		3573CD84287BA40300569CB7 /* newlyCoinedWordProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newlyCoinedWordProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3573CD87287BA40300569CB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3573CD89287BA40300569CB7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +46,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35177D6C28B5887800A57FF1 /* RealmSwift in Frameworks */,
+				35177D6A28B5887800A57FF1 /* Realm in Frameworks */,
 				35177D6328B537BB00A57FF1 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -49,6 +55,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35177D6628B57F9B00A57FF1 /* Diary */ = {
+			isa = PBXGroup;
+			children = (
+				35177D5928B5216800A57FF1 /* DiaryViewController.swift */,
+				35177D5B28B5224400A57FF1 /* DiaryView.swift */,
+				35177D6428B5396A00A57FF1 /* DiaryTableViewCell.swift */,
+			);
+			path = Diary;
+			sourceTree = "<group>";
+		};
+		35177D6728B57FA400A57FF1 /* Write */ = {
+			isa = PBXGroup;
+			children = (
+				35177D5D28B533C100A57FF1 /* WriteViewController.swift */,
+				35177D5F28B533E600A57FF1 /* WriteView.swift */,
+			);
+			path = Write;
+			sourceTree = "<group>";
+		};
 		3573CD7B287BA40300569CB7 = {
 			isa = PBXGroup;
 			children = (
@@ -68,15 +93,13 @@
 		3573CD86287BA40300569CB7 /* newlyCoinedWordProject */ = {
 			isa = PBXGroup;
 			children = (
+				35177D6D28B5888F00A57FF1 /* DiaryModel.swift */,
+				35177D6628B57F9B00A57FF1 /* Diary */,
+				35177D6728B57FA400A57FF1 /* Write */,
+				3573CD8D287BA40300569CB7 /* Main.storyboard */,
 				3573CD87287BA40300569CB7 /* AppDelegate.swift */,
 				3573CD89287BA40300569CB7 /* SceneDelegate.swift */,
 				3573CD8B287BA40300569CB7 /* ViewController.swift */,
-				35177D5928B5216800A57FF1 /* DiaryViewController.swift */,
-				35177D5B28B5224400A57FF1 /* DiaryView.swift */,
-				35177D6428B5396A00A57FF1 /* DiaryTableViewCell.swift */,
-				35177D5D28B533C100A57FF1 /* WriteViewController.swift */,
-				35177D5F28B533E600A57FF1 /* WriteView.swift */,
-				3573CD8D287BA40300569CB7 /* Main.storyboard */,
 				3573CD90287BA40500569CB7 /* Assets.xcassets */,
 				3573CD92287BA40500569CB7 /* LaunchScreen.storyboard */,
 				3573CD95287BA40500569CB7 /* Info.plist */,
@@ -102,6 +125,8 @@
 			name = newlyCoinedWordProject;
 			packageProductDependencies = (
 				35177D6228B537BB00A57FF1 /* SnapKit */,
+				35177D6928B5887800A57FF1 /* Realm */,
+				35177D6B28B5887800A57FF1 /* RealmSwift */,
 			);
 			productName = newlyCoinedWordProject;
 			productReference = 3573CD84287BA40300569CB7 /* newlyCoinedWordProject.app */;
@@ -133,6 +158,7 @@
 			mainGroup = 3573CD7B287BA40300569CB7;
 			packageReferences = (
 				35177D6128B537BB00A57FF1 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				35177D6828B5887800A57FF1 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 3573CD85287BA40300569CB7 /* Products */;
 			projectDirPath = "";
@@ -168,6 +194,7 @@
 				3573CD88287BA40300569CB7 /* AppDelegate.swift in Sources */,
 				3573CD8A287BA40300569CB7 /* SceneDelegate.swift in Sources */,
 				35177D6028B533E600A57FF1 /* WriteView.swift in Sources */,
+				35177D6E28B5888F00A57FF1 /* DiaryModel.swift in Sources */,
 				35177D6528B5396A00A57FF1 /* DiaryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,6 +425,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		35177D6828B5887800A57FF1 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -405,6 +440,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 35177D6128B537BB00A57FF1 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		35177D6928B5887800A57FF1 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 35177D6828B5887800A57FF1 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		35177D6B28B5887800A57FF1 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 35177D6828B5887800A57FF1 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
