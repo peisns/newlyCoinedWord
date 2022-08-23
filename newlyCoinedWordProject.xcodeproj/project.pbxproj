@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35177D5A28B5216800A57FF1 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35177D5928B5216800A57FF1 /* DiaryViewController.swift */; };
+		35177D5C28B5224400A57FF1 /* DiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35177D5B28B5224400A57FF1 /* DiaryView.swift */; };
+		35177D5E28B533C100A57FF1 /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35177D5D28B533C100A57FF1 /* WriteViewController.swift */; };
+		35177D6028B533E600A57FF1 /* WriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35177D5F28B533E600A57FF1 /* WriteView.swift */; };
+		35177D6328B537BB00A57FF1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 35177D6228B537BB00A57FF1 /* SnapKit */; };
+		35177D6528B5396A00A57FF1 /* DiaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35177D6428B5396A00A57FF1 /* DiaryTableViewCell.swift */; };
 		3573CD88287BA40300569CB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3573CD87287BA40300569CB7 /* AppDelegate.swift */; };
 		3573CD8A287BA40300569CB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3573CD89287BA40300569CB7 /* SceneDelegate.swift */; };
 		3573CD8C287BA40300569CB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3573CD8B287BA40300569CB7 /* ViewController.swift */; };
@@ -16,6 +22,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		35177D5928B5216800A57FF1 /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
+		35177D5B28B5224400A57FF1 /* DiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryView.swift; sourceTree = "<group>"; };
+		35177D5D28B533C100A57FF1 /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
+		35177D5F28B533E600A57FF1 /* WriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteView.swift; sourceTree = "<group>"; };
+		35177D6428B5396A00A57FF1 /* DiaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewCell.swift; sourceTree = "<group>"; };
 		3573CD84287BA40300569CB7 /* newlyCoinedWordProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newlyCoinedWordProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3573CD87287BA40300569CB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3573CD89287BA40300569CB7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35177D6328B537BB00A57FF1 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +71,11 @@
 				3573CD87287BA40300569CB7 /* AppDelegate.swift */,
 				3573CD89287BA40300569CB7 /* SceneDelegate.swift */,
 				3573CD8B287BA40300569CB7 /* ViewController.swift */,
+				35177D5928B5216800A57FF1 /* DiaryViewController.swift */,
+				35177D5B28B5224400A57FF1 /* DiaryView.swift */,
+				35177D6428B5396A00A57FF1 /* DiaryTableViewCell.swift */,
+				35177D5D28B533C100A57FF1 /* WriteViewController.swift */,
+				35177D5F28B533E600A57FF1 /* WriteView.swift */,
 				3573CD8D287BA40300569CB7 /* Main.storyboard */,
 				3573CD90287BA40500569CB7 /* Assets.xcassets */,
 				3573CD92287BA40500569CB7 /* LaunchScreen.storyboard */,
@@ -83,6 +100,9 @@
 			dependencies = (
 			);
 			name = newlyCoinedWordProject;
+			packageProductDependencies = (
+				35177D6228B537BB00A57FF1 /* SnapKit */,
+			);
 			productName = newlyCoinedWordProject;
 			productReference = 3573CD84287BA40300569CB7 /* newlyCoinedWordProject.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +131,9 @@
 				Base,
 			);
 			mainGroup = 3573CD7B287BA40300569CB7;
+			packageReferences = (
+				35177D6128B537BB00A57FF1 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 3573CD85287BA40300569CB7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,9 +161,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35177D5E28B533C100A57FF1 /* WriteViewController.swift in Sources */,
+				35177D5C28B5224400A57FF1 /* DiaryView.swift in Sources */,
+				35177D5A28B5216800A57FF1 /* DiaryViewController.swift in Sources */,
 				3573CD8C287BA40300569CB7 /* ViewController.swift in Sources */,
 				3573CD88287BA40300569CB7 /* AppDelegate.swift in Sources */,
 				3573CD8A287BA40300569CB7 /* SceneDelegate.swift in Sources */,
+				35177D6028B533E600A57FF1 /* WriteView.swift in Sources */,
+				35177D6528B5396A00A57FF1 /* DiaryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +388,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		35177D6128B537BB00A57FF1 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		35177D6228B537BB00A57FF1 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 35177D6128B537BB00A57FF1 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3573CD7C287BA40300569CB7 /* Project object */;
 }
