@@ -10,7 +10,7 @@ import SnapKit
 
 class DiaryTableViewCell: UITableViewCell {
 
-    let titleLabel: UILabel = {
+    var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "title label"
         label.textColor = .white
@@ -18,7 +18,7 @@ class DiaryTableViewCell: UITableViewCell {
         return label
     }()
     
-    let diaryDate: UILabel = {
+    var diaryDate: UILabel = {
         let label = UILabel()
         label.text = "1888-12-28"
         label.textColor = .white
@@ -26,7 +26,7 @@ class DiaryTableViewCell: UITableViewCell {
         return label
     }()
 
-    let regDate: UILabel = {
+    var regDate: UILabel = {
         let label = UILabel()
         label.text = "1888-12-28"
         label.textColor = .white
@@ -34,13 +34,13 @@ class DiaryTableViewCell: UITableViewCell {
         return label
     }()
 
-    let photoImageView: UIImageView = {
+    var photoImageView: UIImageView = {
         let view = UIImageView()
         view.image = UIImage(systemName: "star")
         return view
     }()
     
-    let contentsLabel: UILabel = {
+    var contentsLabel: UILabel = {
         let label = UILabel()
         label.text = "diary contents"
         label.textColor = .white
@@ -49,13 +49,13 @@ class DiaryTableViewCell: UITableViewCell {
         return label
     }()
 
-    let likeButton: UIButton = {
+    var likeButton: UIButton = {
         let btn = UIButton()
         btn.setImage(UIImage(systemName: "heart"), for: .normal)
         return btn
     }()
 
-    let markButton: UIButton = {
+    var markButton: UIButton = {
         let btn = UIButton()
         btn.setImage(UIImage(systemName: "star"), for: .normal)
         return btn
@@ -81,21 +81,21 @@ class DiaryTableViewCell: UITableViewCell {
         titleLabel.snp.makeConstraints { make in
             make.leading.trailing.top.equalTo(self.contentView).inset(16)
         }
-        
-        diaryDate.snp.makeConstraints { make in
-            make.leading.trailing.equalTo(self.contentView).inset(16)
-            make.top.equalTo(titleLabel.snp.bottom).offset(16)
-        }
 
         regDate.snp.makeConstraints { make in
             make.leading.trailing.equalTo(self.contentView).inset(16)
-            make.top.equalTo(diaryDate.snp.bottom).offset(16)
+            make.top.equalTo(titleLabel.snp.bottom).offset(16)
+        }
+        
+        diaryDate.snp.makeConstraints { make in
+            make.leading.trailing.equalTo(self.contentView).inset(16)
+            make.top.equalTo(regDate.snp.bottom).offset(16)
         }
 
         photoImageView.snp.makeConstraints { make in
             make.leading.trailing.equalTo(self.contentView).inset(16)
             make.height.equalTo(photoImageView.snp.width)
-            make.top.equalTo(regDate.snp.bottom).offset(16)
+            make.top.equalTo(diaryDate.snp.bottom).offset(16)
         }
         
         contentsLabel.snp.makeConstraints { make in

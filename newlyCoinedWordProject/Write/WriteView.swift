@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 import SnapKit
 
 class WriteView: UIView {
@@ -17,14 +18,6 @@ class WriteView: UIView {
     }()
     
     let datePicker: UIDatePicker = {
-        let picker = UIDatePicker()
-        picker.datePickerMode = .date
-        picker.backgroundColor = .white
-        picker.preferredDatePickerStyle = .compact
-        return picker
-    }()
-
-    let regDatePicker: UIDatePicker = {
         let picker = UIDatePicker()
         picker.datePickerMode = .date
         picker.backgroundColor = .white
@@ -71,8 +64,7 @@ class WriteView: UIView {
     }
     
     func configure() {
-        
-        [titleTF, datePicker, regDatePicker,takePhotoButton, selectPhotoButton, photo, contentsTF].forEach {self.addSubview($0)}
+        [titleTF, datePicker, takePhotoButton, selectPhotoButton, photo, contentsTF].forEach {self.addSubview($0)}
 
     }
     
@@ -89,19 +81,14 @@ class WriteView: UIView {
             make.leading.trailing.equalTo(self.safeAreaLayoutGuide).inset(basicMargin)
         }
         
-        regDatePicker.snp.makeConstraints { make in
-            make.top.equalTo(datePicker.snp.bottom).offset(basicMargin)
-            make.leading.trailing.equalTo(self.safeAreaLayoutGuide).inset(basicMargin)
-        }
-        
         selectPhotoButton.snp.makeConstraints { make in
             make.trailing.equalTo(self.safeAreaLayoutGuide).inset(basicMargin)
-            make.top.equalTo(regDatePicker.snp.bottom).offset(basicMargin)
+            make.top.equalTo(datePicker.snp.bottom).offset(basicMargin)
         }
         
         takePhotoButton.snp.makeConstraints { make in
             make.trailing.equalTo(selectPhotoButton.snp.leading).offset(-basicMargin)
-            make.top.equalTo(regDatePicker.snp.bottom).offset(basicMargin)
+            make.top.equalTo(datePicker.snp.bottom).offset(basicMargin)
         }
         
         photo.snp.makeConstraints { make in
@@ -120,8 +107,4 @@ class WriteView: UIView {
     
    
 
-}
-
-extension WriteView: UISearchBarDelegate {
-    
 }

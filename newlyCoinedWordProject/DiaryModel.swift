@@ -20,7 +20,6 @@ class UserDiary: Object {
     @Persisted var like: Bool
     @Persisted var photoURL: String? //사진URLString(옵션)
     
-    //PK(필수): Int, UUID, ObjectID
     @Persisted(primaryKey: true) var objectId: ObjectId
     
     convenience init(diaryTitle: String, diaryContent: String?, DiaryDate: Date, regDate: Date, photo: String?) {

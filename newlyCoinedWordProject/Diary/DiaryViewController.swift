@@ -21,6 +21,12 @@ class DiaryViewController: UIViewController {
         setNav()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
+                
+        mainView.tableView.reloadData()
+    }
+    
     func setNav() {
         
         var navBtnConfig = UIButton.Configuration.plain()
