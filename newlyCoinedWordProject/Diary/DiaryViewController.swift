@@ -36,7 +36,16 @@ class DiaryViewController: UIViewController {
         let navFilterBtn = UIButton(configuration: navFilterConfig)
         navFilterBtn.addTarget(self, action: #selector(filterBtnClicked), for: .touchUpInside)
         let navFilterBarBtn = UIBarButtonItem(customView: navFilterBtn)
-        navigationItem.leftBarButtonItems = [navFilterBarBtn]
+        
+        var navDataConfig = UIButton.Configuration.plain()
+        navDataConfig.title = "Data"
+        navDataConfig.baseForegroundColor = .black // tint
+        navDataConfig.background.backgroundColor = .white // background
+        let navDataBtn = UIButton(configuration: navDataConfig)
+        navDataBtn.addTarget(self, action: #selector(dataButtonClicked), for: .touchUpInside)
+        let navDataBarBtn = UIBarButtonItem(customView: navDataBtn)
+        
+        navigationItem.leftBarButtonItems = [navFilterBarBtn, navDataBarBtn]
         
         var navBtnConfig = UIButton.Configuration.plain()
         navBtnConfig.title = "WRITE"
@@ -78,5 +87,10 @@ class DiaryViewController: UIViewController {
         alert.addAction(oldest)
         alert.addAction(cancel)
         self.present(alert, animated: false)
+    }
+    
+    @objc func dataButtonClicked() {
+        let vc = DataViewController()
+        present(vc, animated: true)
     }
 }

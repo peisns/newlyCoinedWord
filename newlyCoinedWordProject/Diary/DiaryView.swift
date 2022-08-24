@@ -20,7 +20,7 @@ class DiaryView: UIView {
     let tableView: UITableView = {
         let view = UITableView()
         view.backgroundColor = .black
-        view.allowsSelection = true
+        view.allowsSelection = false
         return view
     }()
 
@@ -94,12 +94,13 @@ extension DiaryView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let action = UIContextualAction(style: .normal, title: nil) { action, view, handler in
+        let action = UIContextualAction(style: .normal, title: "delete") { action, view, handler in
             try! self.localREalm.write({
                 self.localREalm.delete(self.diaryTable[indexPath.row])
             })
             tableView.reloadData()
         }
+        action.backgroundColor = .red
         return UISwipeActionsConfiguration(actions: [action])
     }
 

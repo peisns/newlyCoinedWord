@@ -42,6 +42,20 @@ class WriteView: UIView {
         return btn
     }()
     
+    let imageSearchButton: UIButton = {
+        let btn = UIButton()
+        btn.setTitle("search", for: .normal)
+        btn.setTitleColor(.black, for: .normal)
+        btn.backgroundColor = .white
+        return btn
+    }()
+    
+    let imageTF: UITextField = {
+        let tf = UITextField()
+        tf.backgroundColor = .white
+        return tf
+    }()
+    
     let photo: UIImageView = {
         let tf = UIImageView()
         tf.backgroundColor = .white
@@ -66,12 +80,12 @@ class WriteView: UIView {
     
     func configure() {
         self.backgroundColor = .black
-        [titleTF, datePicker, takePhotoButton, selectPhotoButton, photo, contentsTF].forEach {self.addSubview($0)}
+        [titleTF, datePicker, selectPhotoButton,takePhotoButton, imageSearchButton, imageTF, photo, contentsTF].forEach {self.addSubview($0)}
 
     }
     
     func setConstraints() {
-        let basicMargin:Int = 16 //basicMargin
+        let basicMargin:Int = 16
         
         titleTF.snp.makeConstraints { make in
             make.top.leading.trailing.equalTo(self.safeAreaLayoutGuide).inset(basicMargin)
@@ -86,11 +100,26 @@ class WriteView: UIView {
         selectPhotoButton.snp.makeConstraints { make in
             make.trailing.equalTo(self.safeAreaLayoutGuide).inset(basicMargin)
             make.top.equalTo(datePicker.snp.bottom).offset(basicMargin)
+            make.width.equalTo(70)
         }
         
         takePhotoButton.snp.makeConstraints { make in
             make.trailing.equalTo(selectPhotoButton.snp.leading).offset(-basicMargin)
             make.top.equalTo(datePicker.snp.bottom).offset(basicMargin)
+            make.width.equalTo(70)
+        }
+        
+        imageSearchButton.snp.makeConstraints { make in
+            make.trailing.equalTo(takePhotoButton.snp.leading).offset(-basicMargin)
+            make.top.equalTo(datePicker.snp.bottom).offset(basicMargin)
+            make.width.equalTo(70)
+        }
+        
+        imageTF.snp.makeConstraints { make in
+            make.leading.equalTo(self.safeAreaLayoutGuide).inset(basicMargin)
+            make.trailing.equalTo(imageSearchButton.snp.leading).offset(-basicMargin)
+            make.top.equalTo(datePicker.snp.bottom).offset(basicMargin)
+            make.bottom.equalTo(imageSearchButton.snp.bottom)
         }
         
         photo.snp.makeConstraints { make in
