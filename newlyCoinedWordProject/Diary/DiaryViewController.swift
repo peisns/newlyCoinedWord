@@ -29,6 +29,15 @@ class DiaryViewController: UIViewController {
     
     func setNav() {
         
+        var navFilterConfig = UIButton.Configuration.plain()
+        navFilterConfig.title = "Filter"
+        navFilterConfig.baseForegroundColor = .black // tint
+        navFilterConfig.background.backgroundColor = .white // background
+        let navFilterBtn = UIButton(configuration: navFilterConfig)
+        navFilterBtn.addTarget(self, action: #selector(filterBtnClicked), for: .touchUpInside)
+        let navFilterBarBtn = UIBarButtonItem(customView: navFilterBtn)
+        navigationItem.leftBarButtonItems = [navFilterBarBtn]
+        
         var navBtnConfig = UIButton.Configuration.plain()
         navBtnConfig.title = "WRITE"
         navBtnConfig.image = UIImage(systemName: "square.and.pencil")
@@ -54,4 +63,20 @@ class DiaryViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
+    @objc func filterBtnClicked() {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let newest = UIAlertAction(title: "newest", style: .default) { action in
+            self.mainView.diaryTable = self.mainView.localREalm.objects(UserDiary.self).sorted(byKeyPath: "regDate", ascending: true)
+            self.mainView.tableView.reloadData()
+        }
+        let oldest = UIAlertAction(title: "oldest", style: .default) { action in
+            self.mainView.diaryTable = self.mainView.localREalm.objects(UserDiary.self).sorted(byKeyPath: "regDate", ascending: false)
+            self.mainView.tableView.reloadData()
+        }
+        let cancel = UIAlertAction(title: "cancel", style: .cancel)
+        alert.addAction(newest)
+        alert.addAction(oldest)
+        alert.addAction(cancel)
+        self.present(alert, animated: false)
+    }
 }

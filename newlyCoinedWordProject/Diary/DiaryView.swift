@@ -9,6 +9,7 @@ import UIKit
 
 import RealmSwift
 import SnapKit
+import Network
 
 
 class DiaryView: UIView {
@@ -90,6 +91,16 @@ extension DiaryView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let height = UIScreen.main.bounds.width * 1.5
         return height //UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .normal, title: nil) { action, view, handler in
+            try! self.localREalm.write({
+                self.localREalm.delete(self.diaryTable[indexPath.row])
+            })
+            tableView.reloadData()
+        }
+        return UISwipeActionsConfiguration(actions: [action])
     }
 
     

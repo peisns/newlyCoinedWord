@@ -22,6 +22,7 @@ class WriteView: UIView {
         picker.datePickerMode = .date
         picker.backgroundColor = .white
         picker.preferredDatePickerStyle = .compact
+        picker.maximumDate = .now
         return picker
     }()
     
