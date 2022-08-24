@@ -64,6 +64,7 @@ class WriteView: UIView {
     }
     
     func configure() {
+        self.backgroundColor = .black
         [titleTF, datePicker, takePhotoButton, selectPhotoButton, photo, contentsTF].forEach {self.addSubview($0)}
 
     }

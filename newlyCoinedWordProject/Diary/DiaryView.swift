@@ -41,6 +41,8 @@ class DiaryView: UIView {
         self.addSubview(tableView)
         
         diaryTable = localREalm.objects(UserDiary.self).sorted(byKeyPath: "regDate", ascending: true)
+        
+
     }
     
     func setConstraints() {
@@ -48,29 +50,46 @@ class DiaryView: UIView {
             make.edges.equalTo(safeAreaLayoutGuide)
         }
     }
-
 }
 
 extension DiaryView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 30
+        return diaryTable.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        
-        var cell = DiaryTableViewCell()
+                
+        let cell = DiaryTableViewCell()
         cell.titleLabel.text = diaryTable[indexPath.row].diaryTitle
         cell.diaryDate.text = dateFormatter.string(from: diaryTable[indexPath.row].diaryDate)
         cell.regDate.text = dateFormatter.string(from: diaryTable[indexPath.row].regDate)
         cell.contentsLabel.text = diaryTable[indexPath.row].diaryContents
+        let likeIcon = diaryTable[indexPath.row].like == true ? "heart.fill" : "heart"
+        cell.likeButton.setImage(UIImage(systemName: likeIcon), for: .normal)
+        cell.sendLikeIndex = {
+            try! self.localREalm.write({
+                self.diaryTable[indexPath.row].like = !self.diaryTable[indexPath.row].like
+            })
+            tableView.reloadData()
+        }
+        let markIcon = diaryTable[indexPath.row].favorite == true ? "star.fill" : "star"
+        cell.markButton.setImage(UIImage(systemName: markIcon), for: .normal)
+        cell.sendMarkIndex = {
+            try! self.localREalm.write({
+                self.diaryTable[indexPath.row].favorite = !self.diaryTable[indexPath.row].favorite
+            })
+            tableView.reloadData()
+        }
 
         cell.backgroundColor = .black
         return cell
     }
+        
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UIScreen.main.bounds.width * 1.5//UITableView.automaticDimension
+        let height = UIScreen.main.bounds.width * 1.5
+        return height //UITableView.automaticDimension
     }
 
     

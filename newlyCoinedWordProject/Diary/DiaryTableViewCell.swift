@@ -8,8 +8,9 @@
 import UIKit
 import SnapKit
 
-class DiaryTableViewCell: UITableViewCell {
 
+class DiaryTableViewCell: UITableViewCell {
+    
     var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "title label"
@@ -52,12 +53,14 @@ class DiaryTableViewCell: UITableViewCell {
     var likeButton: UIButton = {
         let btn = UIButton()
         btn.setImage(UIImage(systemName: "heart"), for: .normal)
+        btn.tintColor = .white
         return btn
     }()
 
     var markButton: UIButton = {
         let btn = UIButton()
         btn.setImage(UIImage(systemName: "star"), for: .normal)
+        btn.tintColor = .white
         return btn
     }()
 
@@ -75,8 +78,20 @@ class DiaryTableViewCell: UITableViewCell {
     
     func configure() {
         [titleLabel, diaryDate, regDate, photoImageView, contentsLabel, likeButton, markButton].forEach {self.contentView.addSubview($0)}
+        likeButton.addTarget(self, action: #selector(likeButtonClicked), for: .touchUpInside)
+        markButton.addTarget(self, action: #selector(markButtonClicked), for: .touchUpInside)
     }
     
+    var sendLikeIndex: (() -> ()) = { }
+    var sendMarkIndex: (() -> ()) = { }
+
+    @objc func likeButtonClicked() {
+        sendLikeIndex()
+    }
+    @objc func markButtonClicked() {
+        sendMarkIndex()
+    }
+
     func setConstraints() {
         titleLabel.snp.makeConstraints { make in
             make.leading.trailing.top.equalTo(self.contentView).inset(16)
