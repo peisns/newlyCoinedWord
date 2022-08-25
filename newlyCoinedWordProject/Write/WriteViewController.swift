@@ -28,6 +28,7 @@ class WriteViewController: UIViewController {
     
     func configure() {
         
+        mainView.navCon = self.navigationController ?? UINavigationController()
         setNav()
     }
     

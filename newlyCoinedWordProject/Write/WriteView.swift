@@ -11,6 +11,8 @@ import SnapKit
 
 class WriteView: UIView {
     
+    var navCon : UINavigationController = UINavigationController()
+    
     let titleTF: UITextField = {
         let tf = UITextField()
         tf.backgroundColor = .white
@@ -81,6 +83,7 @@ class WriteView: UIView {
     func configure() {
         self.backgroundColor = .black
         [titleTF, datePicker, selectPhotoButton,takePhotoButton, imageSearchButton, imageTF, photo, contentsTF].forEach {self.addSubview($0)}
+        imageSearchButton.addTarget(self, action: #selector(searchImageButtonClicked) , for: .touchUpInside)
 
     }
     
@@ -132,10 +135,14 @@ class WriteView: UIView {
             make.leading.trailing.equalTo(self.safeAreaLayoutGuide).inset(basicMargin)
             make.height.equalTo(44)
         }
-        
-        
     }
     
+    @objc func searchImageButtonClicked() {
+        let vc = SearchImageViewController()
+        navCon.pushViewController(vc, animated: true)
+        let keyword = imageTF.text!
+        vc.mainView.getImage(keyword: keyword)
+    }
    
 
 }

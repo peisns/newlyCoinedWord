@@ -12,6 +12,11 @@
 		350FB54628B66C3600FC39C3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 350FB54528B66C3600FC39C3 /* Alamofire */; };
 		350FB54828B6CE6400FC39C3 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350FB54728B6CE6400FC39C3 /* DataViewController.swift */; };
 		350FB54A28B6CE7800FC39C3 /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350FB54928B6CE7800FC39C3 /* DataView.swift */; };
+		350FB54E28B6D1F500FC39C3 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 350FB54D28B6D1F500FC39C3 /* Kingfisher */; };
+		350FB55128B6D62600FC39C3 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 350FB55028B6D62600FC39C3 /* SwiftyJSON */; };
+		350FB55328B6D65B00FC39C3 /* SearchImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350FB55228B6D65B00FC39C3 /* SearchImageView.swift */; };
+		350FB55528B6D66500FC39C3 /* SearchImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350FB55428B6D66500FC39C3 /* SearchImageViewController.swift */; };
+		350FB55828B6E08E00FC39C3 /* SearchImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350FB55728B6E08E00FC39C3 /* SearchImageCollectionViewCell.swift */; };
 		35177D5A28B5216800A57FF1 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35177D5928B5216800A57FF1 /* DiaryViewController.swift */; };
 		35177D5C28B5224400A57FF1 /* DiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35177D5B28B5224400A57FF1 /* DiaryView.swift */; };
 		35177D5E28B533C100A57FF1 /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35177D5D28B533C100A57FF1 /* WriteViewController.swift */; };
@@ -34,6 +39,9 @@
 		350FB54228B66B1100FC39C3 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		350FB54728B6CE6400FC39C3 /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
 		350FB54928B6CE7800FC39C3 /* DataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataView.swift; sourceTree = "<group>"; };
+		350FB55228B6D65B00FC39C3 /* SearchImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchImageView.swift; sourceTree = "<group>"; };
+		350FB55428B6D66500FC39C3 /* SearchImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchImageViewController.swift; sourceTree = "<group>"; };
+		350FB55728B6E08E00FC39C3 /* SearchImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		35177D5928B5216800A57FF1 /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
 		35177D5B28B5224400A57FF1 /* DiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryView.swift; sourceTree = "<group>"; };
 		35177D5D28B533C100A57FF1 /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
@@ -55,10 +63,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				350FB55128B6D62600FC39C3 /* SwiftyJSON in Frameworks */,
 				35177D6C28B5887800A57FF1 /* RealmSwift in Frameworks */,
 				350FB54628B66C3600FC39C3 /* Alamofire in Frameworks */,
 				35177D6A28B5887800A57FF1 /* Realm in Frameworks */,
 				35177D6328B537BB00A57FF1 /* SnapKit in Frameworks */,
+				350FB54E28B6D1F500FC39C3 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +82,16 @@
 				350FB54928B6CE7800FC39C3 /* DataView.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		350FB55628B6D66900FC39C3 /* SearchImage */ = {
+			isa = PBXGroup;
+			children = (
+				350FB55228B6D65B00FC39C3 /* SearchImageView.swift */,
+				350FB55428B6D66500FC39C3 /* SearchImageViewController.swift */,
+				350FB55728B6E08E00FC39C3 /* SearchImageCollectionViewCell.swift */,
+			);
+			path = SearchImage;
 			sourceTree = "<group>";
 		};
 		35177D6628B57F9B00A57FF1 /* Diary */ = {
@@ -117,6 +137,7 @@
 				35177D6628B57F9B00A57FF1 /* Diary */,
 				35177D6728B57FA400A57FF1 /* Write */,
 				350FB54B28B6CE7B00FC39C3 /* Data */,
+				350FB55628B6D66900FC39C3 /* SearchImage */,
 				3573CD8D287BA40300569CB7 /* Main.storyboard */,
 				350FB54228B66B1100FC39C3 /* APIKey.swift */,
 				3573CD87287BA40300569CB7 /* AppDelegate.swift */,
@@ -150,6 +171,8 @@
 				35177D6928B5887800A57FF1 /* Realm */,
 				35177D6B28B5887800A57FF1 /* RealmSwift */,
 				350FB54528B66C3600FC39C3 /* Alamofire */,
+				350FB54D28B6D1F500FC39C3 /* Kingfisher */,
+				350FB55028B6D62600FC39C3 /* SwiftyJSON */,
 			);
 			productName = newlyCoinedWordProject;
 			productReference = 3573CD84287BA40300569CB7 /* newlyCoinedWordProject.app */;
@@ -183,6 +206,8 @@
 				35177D6128B537BB00A57FF1 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				35177D6828B5887800A57FF1 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				350FB54428B66C3600FC39C3 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				350FB54C28B6D1F500FC39C3 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				350FB54F28B6D62600FC39C3 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 3573CD85287BA40300569CB7 /* Products */;
 			projectDirPath = "";
@@ -217,12 +242,15 @@
 				35177D5A28B5216800A57FF1 /* DiaryViewController.swift in Sources */,
 				3573CD8C287BA40300569CB7 /* ViewController.swift in Sources */,
 				350FB54328B66B1100FC39C3 /* APIKey.swift in Sources */,
+				350FB55828B6E08E00FC39C3 /* SearchImageCollectionViewCell.swift in Sources */,
 				3573CD88287BA40300569CB7 /* AppDelegate.swift in Sources */,
 				350FB54A28B6CE7800FC39C3 /* DataView.swift in Sources */,
 				3573CD8A287BA40300569CB7 /* SceneDelegate.swift in Sources */,
+				350FB55528B6D66500FC39C3 /* SearchImageViewController.swift in Sources */,
 				35177D6028B533E600A57FF1 /* WriteView.swift in Sources */,
 				35177D6E28B5888F00A57FF1 /* DiaryModel.swift in Sources */,
 				35177D6528B5396A00A57FF1 /* DiaryTableViewCell.swift in Sources */,
+				350FB55328B6D65B00FC39C3 /* SearchImageView.swift in Sources */,
 				350FB54828B6CE6400FC39C3 /* DataViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -453,6 +481,22 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		350FB54C28B6D1F500FC39C3 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		350FB54F28B6D62600FC39C3 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		35177D6128B537BB00A57FF1 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -476,6 +520,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 350FB54428B66C3600FC39C3 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		350FB54D28B6D1F500FC39C3 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 350FB54C28B6D1F500FC39C3 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		350FB55028B6D62600FC39C3 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 350FB54F28B6D62600FC39C3 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
 		};
 		35177D6228B537BB00A57FF1 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
