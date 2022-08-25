@@ -15,6 +15,7 @@ import Kingfisher
 class SearchImageView: UIView {
     
     var urlArray:[String] = []
+    var selectedPhotoUrl: IndexPath = IndexPath()
     
     let collectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
@@ -39,6 +40,9 @@ class SearchImageView: UIView {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(SearchImageCollectionViewCell.self, forCellWithReuseIdentifier: "SearchImageCollectionViewCell")
+        collectionView.allowsMultipleSelection = false
+        collectionView.allowsSelection = true //this is set by default
+
     }
     
     func setConstraints() {
@@ -56,8 +60,28 @@ extension SearchImageView: UICollectionViewDataSource, UICollectionViewDelegateF
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchImageCollectionViewCell", for: indexPath) as! SearchImageCollectionViewCell
         cell.backgroundColor = .blue
-        cell.imageView.kf.setImage(with: URL(string: urlArray[indexPath.row]))
+        cell.imageView.kf.setImage(with: URL(string: urlArray[indexPath.item]))
+        
+        var borderColor = UIColor.clear.cgColor
+            var borderWidth: CGFloat = 0
+
+            if indexPath == selectedPhotoUrl{
+                borderColor = UIColor.brown.cgColor
+                borderWidth = 5 //or whatever you please
+            }else{
+               borderColor = UIColor.clear.cgColor
+                borderWidth = 0
+            }
+
+            cell.imageView.layer.borderWidth = borderWidth
+            cell.imageView.layer.borderColor = borderColor
+        
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedPhotoUrl = indexPath
+        self.collectionView.reloadData()
     }
     
     func getImage(keyword: String) {

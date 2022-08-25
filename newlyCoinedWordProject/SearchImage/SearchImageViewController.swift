@@ -7,7 +7,10 @@
 
 import UIKit
 
+
 class SearchImageViewController: UIViewController {
+    
+    var writeVC: UIViewController = UIViewController()
 
     let mainView = SearchImageView()
     
@@ -37,6 +40,12 @@ class SearchImageViewController: UIViewController {
     
     @objc func selectButtonClicked() {
         print(#function)
+        let index = mainView.selectedPhotoUrl.item
+        let selectedImageURL = mainView.urlArray[index]
+        NotificationCenter.default.post(name: NSNotification.Name("selectedImageURL"), object: nil, userInfo: ["url": selectedImageURL])
+        
+        self.navigationController?.popViewController(animated: false)
     }
-
 }
+
+

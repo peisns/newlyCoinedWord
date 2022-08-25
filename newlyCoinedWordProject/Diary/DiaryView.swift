@@ -9,7 +9,7 @@ import UIKit
 
 import RealmSwift
 import SnapKit
-import Network
+import Kingfisher
 
 
 class DiaryView: UIView {
@@ -83,7 +83,11 @@ extension DiaryView: UITableViewDelegate, UITableViewDataSource {
             })
             tableView.reloadData()
         }
-
+        if let imageURL = diaryTable[indexPath.row].photoURL {
+            cell.photoImageView.kf.setImage(with: URL(string: imageURL))
+        } else {
+            cell.photoImageView.image = UIImage(systemName: "star")
+        }
         cell.backgroundColor = .black
         return cell
     }

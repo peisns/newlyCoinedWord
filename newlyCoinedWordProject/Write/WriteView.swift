@@ -8,10 +8,12 @@
 import UIKit
 
 import SnapKit
+import Kingfisher
 
 class WriteView: UIView {
-    
+        
     var navCon : UINavigationController = UINavigationController()
+    var selectedImageURL: String = ""
     
     let titleTF: UITextField = {
         let tf = UITextField()
@@ -82,9 +84,11 @@ class WriteView: UIView {
     
     func configure() {
         self.backgroundColor = .black
+        
         [titleTF, datePicker, selectPhotoButton,takePhotoButton, imageSearchButton, imageTF, photo, contentsTF].forEach {self.addSubview($0)}
         imageSearchButton.addTarget(self, action: #selector(searchImageButtonClicked) , for: .touchUpInside)
-
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(getImageURL(notification:)), name: NSNotification.Name("selectedImageURL"), object: nil)
     }
     
     func setConstraints() {
@@ -143,6 +147,14 @@ class WriteView: UIView {
         let keyword = imageTF.text!
         vc.mainView.getImage(keyword: keyword)
     }
-   
-
+    
+    @objc func getImageURL(notification: NSNotification) {
+        print(#function)
+        if let name = notification.userInfo?["url"] as? String {
+            selectedImageURL = name
+            print(selectedImageURL)
+            photo.kf.setImage(with: URL(string: selectedImageURL))
+        }
+    }
 }
+

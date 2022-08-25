@@ -17,6 +17,7 @@
 		350FB55328B6D65B00FC39C3 /* SearchImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350FB55228B6D65B00FC39C3 /* SearchImageView.swift */; };
 		350FB55528B6D66500FC39C3 /* SearchImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350FB55428B6D66500FC39C3 /* SearchImageViewController.swift */; };
 		350FB55828B6E08E00FC39C3 /* SearchImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350FB55728B6E08E00FC39C3 /* SearchImageCollectionViewCell.swift */; };
+		350FB55B28B7015700FC39C3 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 350FB55A28B7015700FC39C3 /* Zip */; };
 		35177D5A28B5216800A57FF1 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35177D5928B5216800A57FF1 /* DiaryViewController.swift */; };
 		35177D5C28B5224400A57FF1 /* DiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35177D5B28B5224400A57FF1 /* DiaryView.swift */; };
 		35177D5E28B533C100A57FF1 /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35177D5D28B533C100A57FF1 /* WriteViewController.swift */; };
@@ -63,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				350FB55B28B7015700FC39C3 /* Zip in Frameworks */,
 				350FB55128B6D62600FC39C3 /* SwiftyJSON in Frameworks */,
 				35177D6C28B5887800A57FF1 /* RealmSwift in Frameworks */,
 				350FB54628B66C3600FC39C3 /* Alamofire in Frameworks */,
@@ -173,6 +175,7 @@
 				350FB54528B66C3600FC39C3 /* Alamofire */,
 				350FB54D28B6D1F500FC39C3 /* Kingfisher */,
 				350FB55028B6D62600FC39C3 /* SwiftyJSON */,
+				350FB55A28B7015700FC39C3 /* Zip */,
 			);
 			productName = newlyCoinedWordProject;
 			productReference = 3573CD84287BA40300569CB7 /* newlyCoinedWordProject.app */;
@@ -208,6 +211,7 @@
 				350FB54428B66C3600FC39C3 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				350FB54C28B6D1F500FC39C3 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				350FB54F28B6D62600FC39C3 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				350FB55928B7015700FC39C3 /* XCRemoteSwiftPackageReference "Zip" */,
 			);
 			productRefGroup = 3573CD85287BA40300569CB7 /* Products */;
 			projectDirPath = "";
@@ -497,6 +501,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		350FB55928B7015700FC39C3 /* XCRemoteSwiftPackageReference "Zip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Zip.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		35177D6128B537BB00A57FF1 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -530,6 +542,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 350FB54F28B6D62600FC39C3 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
+		};
+		350FB55A28B7015700FC39C3 /* Zip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 350FB55928B7015700FC39C3 /* XCRemoteSwiftPackageReference "Zip" */;
+			productName = Zip;
 		};
 		35177D6228B537BB00A57FF1 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
