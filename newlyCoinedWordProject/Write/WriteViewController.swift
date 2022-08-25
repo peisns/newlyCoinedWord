@@ -56,6 +56,10 @@ class WriteViewController: UIViewController {
             localREalm.add(data)
         })
         
+        if let image = mainView.photo.image {
+            saveImageToDocument(fileName: "\(data.objectId).jpg", image: image)
+        }
+        
         self.navigationController?.popViewController(animated: true)
     }
 }
